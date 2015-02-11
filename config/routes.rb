@@ -1,11 +1,21 @@
 Rails.application.routes.draw do
+
+  get 'login/login'
+  post 'login/login'
+
+  post 'login/logout'
+  get 'login/logout'
+
+  post 'login/change_password'
+  get 'login/change_password'
+
   resources :surveys
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'login#login'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
