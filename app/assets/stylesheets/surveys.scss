@@ -1,3 +1,65 @@
 // Place all the styles related to the Surveys controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.dashboard-header {
+  margin: 2em 0 0 .5em;
+
+}
+
+.new-survey__link {
+  position: absolute;
+  top: 12%;
+  left: 16%;
+
+}
+
+.dashboard-container {
+  width: 100%;
+  padding: 1em;
+}
+
+.survey-list-container {
+  display: table;
+  width: 100%;
+  margin: auto;
+
+  .list-head {
+    display: table-header-group;
+
+    .column-titles {
+      display: table-row;
+      list-style-type: none;
+
+      .list-labels {
+        display: table-cell;
+      }
+    }
+  }
+
+  .survey-list {
+    display: table-row-group;
+
+    .survey-list__item {
+      display: table-row;
+      list-style-type: none;
+
+      .survey-list__info {
+        display: table-cell;
+        border: 1px solid black;
+        border-radius: .25em;
+        // width: 10em;
+        padding: .5em;
+        font-size: 1.5em;
+      }
+
+      .survey-list__link {
+        display: table-cell;
+        // border: 1px solid black;
+        text-decoration: none;
+        width: 3em;
+        padding: 0 .5em;
+        font-size: 1em;
+      }
+    }
+  }
+}
