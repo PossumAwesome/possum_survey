@@ -24,9 +24,15 @@
     <%= f.text_field :description %>
   </div>
 
+  <h1>Add Questions:</h1><br>
   <%= f.fields_for :questions do |ff| %>
-    <p>Text: <%= ff.text_field :text %></p>
+    <p>Question: <%= ff.text_field :text %></p>
     <p>Description: <%= ff.text_area :description %></p>
+    <p>
+      <%= ff.label :question_type %><br>
+      <%= ff.select (:question_type), ["true/false", "short answer", "long answer", "multiple choice"] %>
+    </p>
+
   <% end %>
 
   <div class="actions">
