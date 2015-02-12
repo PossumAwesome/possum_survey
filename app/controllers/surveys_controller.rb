@@ -21,6 +21,7 @@ class SurveysController < ApplicationController
   # GET /surveys/1/edit
   def edit
     @survey.questions.build
+    @question.options.build
   end
 
   # POST /surveys
@@ -67,12 +68,13 @@ class SurveysController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_survey
       @survey = Survey.find(params[:id])
+      @question = Question.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def survey_params
       params.require(:survey).permit(:author_id, :title, :description,
-        questions_attributes: [:id, :text, :description, :question_type])
+        questions_attributes: [:id, :text, :description, :question_type, options_attributes: [:id, :reponse]])
     end
 
 end

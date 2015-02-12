@@ -32,7 +32,9 @@
       <%= ff.label :question_type %><br>
       <%= ff.select (:question_type), ["true/false", "short answer", "long answer", "multiple choice"] %>
     </p>
-
+    <%= ff.fields_for :options do |ffu| %>
+      <p>Response: <%= ffu.text_field :response %></p>
+    <% end %>
   <% end %>
 
   <div class="actions">
