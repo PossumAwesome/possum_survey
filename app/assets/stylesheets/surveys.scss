@@ -2,15 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .dashboard-header {
-  margin: 2em 0 0 .5em;
-
+  margin: 2em 0 .5em .2em;
+  font-size: 3.5em;
 }
 
 .new-survey__link {
-  position: absolute;
-  top: 12%;
-  left: 16%;
+  position: fixed;
+  top: 18%;
+  left: 25%;
+  font-size: 1.3em;
+}
 
+.logout-button__link {
+  position: fixed;
+  top: 18%;
+  right: 14%;
+  font-size: 1.3em;
 }
 
 .dashboard-container {
@@ -28,10 +35,11 @@
 
     .column-titles {
       display: table-row;
-      list-style-type: none;
+      font-size: 1.3em;
 
       .list-labels {
         display: table-cell;
+        padding-bottom: .5em;
       }
     }
   }
@@ -47,18 +55,25 @@
         display: table-cell;
         border: 1px solid black;
         border-radius: .25em;
-        // width: 10em;
-        padding: .5em;
+        padding: 1em;
         font-size: 1.5em;
       }
 
       .survey-list__link {
         display: table-cell;
-        // border: 1px solid black;
         text-decoration: none;
-        width: 3em;
+        width: 1em;
         padding: 0 .5em;
         font-size: 1em;
+      }
+
+      .icons {
+        font-family: 'rails-collab';
+        text-decoration: none;
+        font-size: 1em;
+        margin-right: 1em;
+        float: right;
+        word-spacing: 8px;
       }
     }
   }
