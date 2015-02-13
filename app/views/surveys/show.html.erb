@@ -15,5 +15,14 @@
   <%= @survey.description %>
 </p>
 
+<% @survey.questions.each do |q| %>
+  <p><%= q.text %></p>
+  <p><%= q.description %></p>
+  <% q.options.each do |o| %>
+    <!-- the way that this displays depends on q.question_type -->
+    <p><%= o.response %></p>
+  <% end %>
+<% end %>
+
 <%= link_to 'Edit', edit_survey_path(@survey) %> |
 <%= link_to 'Back', surveys_path %>

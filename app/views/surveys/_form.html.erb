@@ -33,15 +33,6 @@
       <%= ff.select :question_type, ["true/false", "short answer", "long answer", "multiple choice"], include_blank: true %>
     </p>
     <%= ff.fields_for :options do |ffu| %>
-      <!-- show if true/false -->
-      <!-- <p>True <%= ffu.radio_button( :response, "True" )%></p>
-      <p>False <%= ffu.radio_button( :response, "False" )%></p> -->
-      <!-- show if short answer -->
-      <!-- <p>Response: <%= ffu.text_field :response %></p> -->
-      <!-- show if long answer -->
-      <!-- <p>Response: <%= ffu.text_area :response %></p> -->
-      <!-- show if multiple choice -->
-      <!-- <p>Checkb: <%= ffu.check_box :response %></p> -->
       <p> multiple choice option:<%= ffu.text_field :response %></p>
     <% end %>
   <% end %>
