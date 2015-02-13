@@ -1,0 +1,61 @@
+// Place all the styles related to the new controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+h1 {
+  // margin-left: 10%;
+}
+
+#author-id {
+  display: none;
+}
+
+.new-survey-title {
+  margin-left: 10%;
+}
+
+.field {
+  // border: 1px solid #F5F5F5;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.field:hover {
+  background: #F5F5F5;
+}
+
+.field label {
+  // font-size: 1.1em;
+  margin-left: 5%;
+}
+
+#survey_title {
+  display: block;
+  width: 90%;
+  height: 2em;
+  font-size: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+#survey_description {
+  display: block;
+  width: 90%;
+  height: 2em;
+  font-size: 1.25em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+.actions input[type=submit]{
+  background: #3E83F1;
+  border-style: none;
+  font-size: 1em;
+  cursor: pointer;
+  margin-left: 10%;
+  margin-top: 1em;
+  padding: 1em;
+  border-radius: 5px;
+}

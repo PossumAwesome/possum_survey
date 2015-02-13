@@ -32,4 +32,8 @@ class LoginController < ApplicationController
     end
   end
 
+  def register
+    session[:author_id] = nil
+    redirect_to login_register_path
+  end
 end
