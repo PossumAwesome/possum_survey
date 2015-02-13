@@ -16,12 +16,12 @@ class SurveysController < ApplicationController
   # GET /surveys/new
   def new
     @survey = Survey.new
+    @survey.questions.build
   end
 
   # GET /surveys/1/edit
   def edit
     @survey.questions.build
-    @question.options.build
   end
 
   # POST /surveys
