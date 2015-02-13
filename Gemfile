@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.0'
+
 # Bourbon for styling
 gem 'bourbon'
 # Neat for grids

@@ -9,7 +9,11 @@ Rails.application.routes.draw do
   post 'login/change_password'
   get 'login/change_password'
 
+  post 'login/register'
+  get 'login/register'
+
   resources :surveys
+  resources :authors
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
