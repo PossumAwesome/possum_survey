@@ -10,7 +10,6 @@ class SurveysController < ApplicationController
     else
       @surveys = []
     end
-    # @surveys = Survey.all
   end
 
   # GET /surveys/1
