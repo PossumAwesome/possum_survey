@@ -7,10 +7,22 @@
 }
 
 .new-survey__link {
-  position: fixed;
+  position: absolute;
   top: 18.5%;
-  left: 25.5%;
+  left: 27.5%;
   font-size: 1.3em;
+}
+
+.icon-plus {
+  position: absolute;
+  top: 18.75%;
+  left: 26%;
+}
+
+.icon-logout {
+  position: absolute;
+  top: 18.75%;
+  right: 7.5%;
 }
 
 .logout-button__link {
@@ -89,14 +101,15 @@
         font-size: 1em;
       }
 
-      .icons {
-        font-family: 'rails-collab';
-        text-decoration: none;
-        font-size: 1em;
-        margin-right: 1em;
-        float: right;
-        word-spacing: 8px;
       }
     }
   }
+
+.icons {
+  font-family: 'rails-collab';
+  text-decoration: none;
+  font-size: 1em;
+  margin-right: 1em;
+  float: right;
+  word-spacing: 8px;
 }
