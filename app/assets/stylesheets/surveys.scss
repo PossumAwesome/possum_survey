@@ -8,14 +8,14 @@
 
 .new-survey__link {
   position: fixed;
-  top: 18%;
+  top: 18.5%;
   left: 25.5%;
   font-size: 1.3em;
 }
 
 .logout-button__link {
   position: fixed;
-  top: 18%;
+  top: 18.5%;
   right: 2%;
   font-size: 1.3em;
 }
@@ -40,23 +40,45 @@
       .list-labels {
         display: table-cell;
         padding-bottom: .5em;
+        font-weight: 600;
       }
     }
   }
 
   .survey-list {
     display: table-row-group;
+    &:nth-child(3) {
+      background-color: lightblue;
+    }
 
     .survey-list__item {
       display: table-row;
       list-style-type: none;
 
-      .survey-list__info {
+      .survey-list__author,
+      .survey-list__title,
+      .survey-list__description {
         display: table-cell;
-        border: 1px solid black;
-        border-radius: .15em;
-        padding: 1em;
+        padding: 1em 0;
         font-size: 1.5em;
+      }
+
+      .survey-list__author {
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        border-left: 1px solid black;
+        padding-left: .5em;
+      }
+
+      .survey-list__title {
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+      }
+
+      .survey-list__description {
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        border-right: 1px solid black;
       }
 
       .survey-list__link {
