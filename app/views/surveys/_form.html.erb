@@ -30,10 +30,10 @@
     <p>Description: <%= ff.text_area :description %></p>
     <p>
       <%= ff.label :question_type %><br>
-      <%= ff.select :question_type, options_for_select(["true/false", "short answer", "long answer", "multiple choice"]), include_blank: true %>
+      <%= ff.select :question_type, ["true/false", "short answer", "long answer", "multiple choice"], include_blank: true %>
     </p>
     <%= ff.fields_for :options do |ffu| %>
-      <p>Option: <%= ffu.text_field :response %></p>
+      <p> multiple choice option:<%= ffu.text_field :response %></p>
     <% end %>
   <% end %>
 
