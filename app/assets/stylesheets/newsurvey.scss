@@ -24,7 +24,9 @@
 }
 
 .new-question-select {
-  // font-size: 10em;
+  font-size: 1em;
+  background-color: white;
+  outline-color: white;
 }
 
   .question-display {
@@ -39,7 +41,11 @@
     }
 
     .question-yes-no {
-      // display: none;
+      display: none;
+    }
+
+    .show-question {
+      display: block;
     }
   }
 
