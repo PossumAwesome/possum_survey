@@ -3,8 +3,5 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(function () {
-  $('add-question').click(function (e) {
-    e.preventDefault;
-    $('.new-question-container').clone().appendTo('.question-display');
-  })
+  alert('hey bernard');
 });
