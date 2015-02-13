@@ -24,18 +24,50 @@
     <%= f.text_field :description %>
   </div>
 
-  <h1>Add Questions:</h1><br>
-  <%= f.fields_for :questions do |ff| %>
-    <p>Question: <%= ff.text_field :text %></p>
-    <p>Description: <%= ff.text_area :description %></p>
-    <p>
-      <%= ff.label :question_type %><br>
-      <%= ff.select :question_type, ["true/false", "short answer", "long answer", "multiple choice"]  %>
-    </p>
-    <%= ff.fields_for :options do |ffu| %>
-      <p>Response: <%= ffu.text_field :response %></p>
+  <h2 id="add-questions-title">Add Questions:</h2><br>
+  <div class="new-question-container">
+    <%= f.fields_for :questions do |ff| %>
+      <p>Question: <%= ff.text_field :text, class: 'field' %></p>
+      <p>Description: <%= ff.text_field :description, class: 'field' %></p>
+      <p>
+        <%= ff.label :question_type %><br>
+        <%= ff.select :question_type, ["true/false", "short answer", "long answer", "multiple choice"], {}, class: 'new-question-select' %>
+      </p>
+      <%= ff.fields_for :options do |ffu| %>
+        <p>Response: <%= ffu.text_field :response %></p>
+      <% end %>
     <% end %>
-  <% end %>
+    <div class="question-display">
+
+      <div class="question-yes-no">
+
+        <form class="yes-no">
+
+          <label>Yes</label>
+          <input class="yes-radio" type="radio" name="yes-no">
+          <label>No</label>
+          <input class="no-radio" type="radio" name="yes-no">
+
+        </form>
+
+      </div>
+
+      <!-- <div class="question-short-answer">
+
+        <form class="short-answer">
+          <input class="short-answer-text" type="text">
+        </form>
+
+      </div>
+
+      <div class="question-long-answer">
+        <form class="long-answer">
+          <input class="long-answer-text" type="text">
+        </form>
+      </div> -->
+
+    </div>
+  </div>
 
   <div class="actions">
     <%= f.submit %>
