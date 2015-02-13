@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1 class="dashboard-header">My Surveys</h1>
+<div class="icon-plus"></div>
 
 <div class="dashboard-container">
   <div class="survey-list-container">
@@ -15,9 +16,9 @@
     <div class="survey-list">
       <% @surveys.each do |survey| %>
         <ul class="survey-list__item">
-          <li class="survey-list__info"><%= survey.author_id %></li>
-          <li class="survey-list__info"><%= survey.title %></li>
-          <li class="survey-list__info"><%= survey.description %> <span class="icons"><%= link_to 'm', survey %> <%= link_to 'e', edit_survey_path(survey) %> <%= link_to 't', survey, method: :delete, data: { confirm: 'Are you sure?' } %></span></li>
+          <li class="survey-list__author"><%= survey.author_id %></li>
+          <li class="survey-list__title"><%= survey.title %></li>
+          <li class="survey-list__description"><%= survey.description %> <span class="icons"><%= link_to 'm', survey %> <%= link_to 'z', edit_survey_path(survey) %> <%= link_to 't', survey, method: :delete, data: { confirm: 'Are you sure?' } %></span></li>
           <!-- <li class="survey-list__link icons"><%= link_to 'm', survey %></li>
           <li class="survey-list__link icons"><%= link_to 'e', edit_survey_path(survey) %></li>
           <li class="survey-list__link icons"><%= link_to 't', survey, method: :delete, data: { confirm: 'Are you sure?' } %></li> -->
@@ -30,3 +31,5 @@
 <br>
 
 <%= link_to 'New Survey', new_survey_path, class: 'new-survey__link' %>
+<%= link_to "Log out", login_logout_path, class: 'logout-button__link' %>
+<div class="icon-logout"></div>
