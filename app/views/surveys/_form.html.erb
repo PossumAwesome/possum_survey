@@ -43,8 +43,11 @@
       <!-- show if multiple choice -->
       <!-- <p>Checkb: <%= ffu.check_box :response %></p> -->
       <p> multiple choice option:<%= ffu.text_field :response %></p>
+
     <% end %>
-  <% end %>
+    <div class="question-display"></div>
+    <button class="add-question">New Question</button>
+  </div>
 
   <div class="actions">
     <%= f.submit %>
