@@ -22,11 +22,20 @@ class SurveysController < ApplicationController
   def new
     @survey = Survey.new
     @survey.questions.build
+
+    @survey.questions.each do |q|
+      q.options.build
+    end
+
   end
 
   # GET /surveys/1/edit
   def edit
     @survey.questions.build
+    @survey.questions.each do |q|
+      q.options.build
+    end
+
   end
 
   # POST /surveys
