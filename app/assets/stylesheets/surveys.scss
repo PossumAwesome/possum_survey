@@ -1,3 +1,80 @@
 // Place all the styles related to the Surveys controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.dashboard-header {
+  margin: 2em 0 .5em .2em;
+  font-size: 3.5em;
+}
+
+.new-survey__link {
+  position: fixed;
+  top: 18%;
+  left: 25.5%;
+  font-size: 1.3em;
+}
+
+.logout-button__link {
+  position: fixed;
+  top: 18%;
+  right: 2%;
+  font-size: 1.3em;
+}
+
+.dashboard-container {
+  width: 100%;
+  padding: 1em;
+}
+
+.survey-list-container {
+  display: table;
+  width: 100%;
+  margin: auto;
+
+  .list-head {
+    display: table-header-group;
+
+    .column-titles {
+      display: table-row;
+      font-size: 1.3em;
+
+      .list-labels {
+        display: table-cell;
+        padding-bottom: .5em;
+      }
+    }
+  }
+
+  .survey-list {
+    display: table-row-group;
+
+    .survey-list__item {
+      display: table-row;
+      list-style-type: none;
+
+      .survey-list__info {
+        display: table-cell;
+        border: 1px solid black;
+        border-radius: .15em;
+        padding: 1em;
+        font-size: 1.5em;
+      }
+
+      .survey-list__link {
+        display: table-cell;
+        text-decoration: none;
+        width: 1em;
+        padding: 0 .5em;
+        font-size: 1em;
+      }
+
+      .icons {
+        font-family: 'rails-collab';
+        text-decoration: none;
+        font-size: 1em;
+        margin-right: 1em;
+        float: right;
+        word-spacing: 8px;
+      }
+    }
+  }
+}
