@@ -1,9 +1,8 @@
 $(function () {
   $('.add-question-button').click(function (event) {
+    event.preventDefault();
     alert('i love tom long time');
     var thisButton = $(this);
-    $(thisButton).parent().parent().clone(true, true).insertBefore('.actions');
-    event.stopPropagation();
-    event.preventDefault();
+    $('.question').last().clone(true).insertBefore('.actions');
   });
 });
