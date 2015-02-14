@@ -24,18 +24,6 @@
     <%= f.text_field :description %>
   </div>
 
-<<<<<<< HEAD
-  <h2 id="add-questions-title">Add Questions:</h2><br>
-  <%= f.fields_for :questions do |ff| %>
-    <p>Question: <%= ff.text_field :text %></p>
-    <p>Description: <%= ff.text_area :description %></p>
-    <p>
-      <%= ff.label :question_type %><br>
-      <%= ff.select :question_type, ["true/false", "short answer", "long answer", "multiple choice"]  %>
-    </p>
-    <%= ff.fields_for :options do |ffu| %>
-      <p>Response: <%= ffu.text_field :response %></p>
-=======
   <div class="new-question-container">
     <h1>Add Questions:</h1><br>
     <%= f.fields_for :questions do |ff| %>
@@ -57,7 +45,6 @@
         <!-- <p>Checkb: <%= ffu.check_box :response %></p> -->
         <p> multiple choice option:<%= ffu.text_field :response %></p>
       <% end %>
->>>>>>> 4ce701a98e29f8d84c3c1ab009c586348816fd38
     <% end %>
       <div class="question-display"></div>
       <button class="add-question">New Question</button>
