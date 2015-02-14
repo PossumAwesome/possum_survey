@@ -24,30 +24,28 @@
     <%= f.text_field :description %>
   </div>
 
+  <h1 class="add-questions-title">Add Questions:</h1><br>
   <div class="new-question-container">
-    <h1>Add Questions:</h1><br>
-    <%= f.fields_for :questions do |ff| %>
-      <p>Question: <%= ff.text_field :text, class: 'field' %></p>
-      <p>Description: <%= ff.text_area :description, class: 'field' %></p>
-      <p>
-        <%= ff.label :question_type %><br>
-        <%= ff.select :question_type, ["true/false", "short answer", "long answer", "multiple choice"], include_blank: true %>
-      </p>
-      <%= ff.fields_for :options do |ffu| %>
-        <!-- show if true/false -->
-        <!-- <p>True <%= ffu.radio_button( :response, "True" )%></p>
-        <p>False <%= ffu.radio_button( :response, "False" )%></p> -->
-        <!-- show if short answer -->
-        <!-- <p>Response: <%= ffu.text_field :response %></p> -->
-        <!-- show if long answer -->
-        <!-- <p>Response: <%= ffu.text_area :response %></p> -->
-        <!-- show if multiple choice -->
-        <!-- <p>Checkb: <%= ffu.check_box :response %></p> -->
-        <p> multiple choice option:<%= ffu.text_field :response %></p>
+
+
+    <div class="question">
+      <%= f.fields_for :questions do |ff| %>
+        <p>Question: <%= ff.text_field :text, class: 'field' %></p>
+        <p>Description: <%= ff.text_area :description, class: 'field' %></p>
+        <p>Is this a required question? <%= ff.check_box :answer_required, class: 'field' %>Yes.</p>
+
+        <p>
+          <%= ff.label :question_type %><br>
+          <%= ff.select :question_type, ["true/false", "short answer", "long answer", "multiple choice"], {include_blank: true}, class: 'new-question-select' %>
+        </p>
+        <%= ff.fields_for :options do |ffu| %>
+          <p class="multiple-choice-field"> multiple choice option:<%= ffu.text_field :response %></p>
+        <% end %>
       <% end %>
-    <% end %>
-      <div class="question-display"></div>
-      <button class="add-question">New Question</button>
+      <button class="add-question-button">New Question</button>
+    </div>
+
+    <div class="question-display"></div>
   </div>
 
   <div class="actions">

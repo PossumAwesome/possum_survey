@@ -30,6 +30,33 @@
   outline-color: white;
 }
 
+.question {
+  border: 1px solid black;
+  padding: 1em;
+  // width: 100%;
+}
+
+.add-question {
+  padding: 1em;
+  background: white;
+  border-radius: .25em;
+  border: 1px solid black;
+  margin-top: .5em;
+}
+
+.multiple-choice-field {
+  display: none;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em;
+  resize: none;
+}
+
+.add-question-button:hover {
+  cursor: pointer;
+}
+
   .question-display {
     // visibility: hidden;
 
