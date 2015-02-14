@@ -35,12 +35,19 @@
   // width: 100%;
 }
 
-.add-question {
-  padding: 1em;
-  background: white;
-  border-radius: .25em;
-  border: 1px solid black;
-  margin-top: .5em;
+.add-button-container {
+  width: 100%;
+
+  .add-question-button {
+    padding: 1em;
+    background: white;
+    border-radius: .25em;
+    border: 1px solid black;
+    width: 15em;
+    margin-top: .5em;
+    margin-left: 27.5em;
+  }
+
 }
 
 .multiple-choice-field {
