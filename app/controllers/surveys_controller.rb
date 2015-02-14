@@ -5,7 +5,11 @@ class SurveysController < ApplicationController
   # GET /surveys
   # GET /surveys.json
   def index
-    @surveys = Survey.all
+    if session[:author_id]
+      @surveys = Survey.where author_id: session[:author_id]
+    else
+      @surveys = []
+    end
   end
 
   # GET /surveys/1
@@ -17,11 +21,20 @@ class SurveysController < ApplicationController
   def new
     @survey = Survey.new
     @survey.questions.build
+
+    @survey.questions.each do |q|
+      q.options.build
+    end
+
   end
 
   # GET /surveys/1/edit
   def edit
     @survey.questions.build
+    @survey.questions.each do |q|
+      q.options.build
+    end
+
   end
 
   # POST /surveys
@@ -73,7 +86,7 @@ class SurveysController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def survey_params
       params.require(:survey).permit(:author_id, :title, :description,
-        questions_attributes: [:id, :text, :description, :question_type, options_attributes: [:id, :reponse]])
+        questions_attributes: [:id, :text, :description, :question_type, options_attributes: [:id, :response]])
     end
 
 end

@@ -1,10 +1,57 @@
 // Place all the styles related to the new controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+<<<<<<< HEAD
+=======
+// * {
+//   border: 1px dashed black;
+//   padding: 10px;
+//   margin: 10px;
+// }
+
+#add-questions-title{
+  text-align: left;
+  margin-left: 10%;
+}
+>>>>>>> 4ce701a98e29f8d84c3c1ab009c586348816fd38
 
 #author-id {
   display: none;
 }
+
+.new-question-container {
+  border: 1px solid black;
+  width: 50%;
+  padding: 1em;
+  margin: auto;
+}
+
+.new-question-select {
+  font-size: 1em;
+  background-color: white;
+  outline-color: white;
+}
+
+  .question-display {
+    // visibility: hidden;
+
+    .question-short-answer{
+
+    }
+
+    .question-long-answer {
+
+    }
+
+    .question-yes-no {
+      display: none;
+    }
+
+    .show-question {
+      display: block;
+    }
+  }
+
 
 .new-survey-title {
   margin-top: 2em;
@@ -18,7 +65,12 @@
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+<<<<<<< HEAD
   padding-bottom: 2px;
+=======
+  padding: 1em;
+  resize: none;
+>>>>>>> 4ce701a98e29f8d84c3c1ab009c586348816fd38
 }
 
 .field:hover {
@@ -37,7 +89,7 @@
   font-size: 1.75em;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
 }
 
 #survey_description {
