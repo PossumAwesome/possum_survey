@@ -27,16 +27,31 @@
   <h1 class="add-questions-title">Add Questions:</h1><br>
   <div class="new-question-container">
 
-
     <div class="question">
       <%= f.fields_for :questions do |ff| %>
-        <p>Question: <%= ff.text_field :text, class: 'field' %></p>
-        <p>Description: <%= ff.text_area :description, class: 'field' %></p>
-        <p>Is this a required question? <%= ff.check_box :answer_required, class: 'field' %>Yes.</p>
+        <p>Question: <%= ff.text_field :text, class: 'question-field' %></p>
+        <p>Description: <%= ff.text_area :description, class: 'description-field' %></p>
+        <p>Is this a required question? <%= ff.check_box :answer_required, class: 'required-field' %>Yes.</p>
 
         <p>
           <%= ff.label :question_type %><br>
-          <%= ff.select :question_type, ["true/false", "short answer", "long answer", "multiple choice"], {include_blank: true}, class: 'new-question-select' %>
+          <%= ff.select :question_type, ["true/false", "short answer", "long answer", "multiple choice"], {include_blank: true}, class: 'select-field' %>
+        </p>
+        <%= ff.fields_for :options do |ffu| %>
+          <p class="multiple-choice-field"> multiple choice option:<%= ffu.text_field :response %></p>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="hidden-question">
+      <%= f.fields_for :questions do |ff| %>
+        <p>Question: <%= ff.text_field :text, class: 'question-field' %></p>
+        <p>Description: <%= ff.text_area :description, class: 'description-field' %></p>
+        <p>Is this a required question? <%= ff.check_box :answer_required, class: 'required-field' %>Yes.</p>
+
+        <p>
+          <%= ff.label :question_type %><br>
+          <%= ff.select :question_type, ["true/false", "short answer", "long answer", "multiple choice"], {include_blank: true}, class: 'select-field' %>
         </p>
         <%= ff.fields_for :options do |ffu| %>
           <p class="multiple-choice-field"> multiple choice option:<%= ffu.text_field :response %></p>
