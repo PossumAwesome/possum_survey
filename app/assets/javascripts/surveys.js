@@ -1,7 +1,9 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
-
 $(function () {
-  alert('hey bernard');
+  $('.add-question-button').click(function (event) {
+    alert('i love tom long time');
+    var thisButton = $(this);
+    $(thisButton).parent().clone(true, true).insertBefore('.actions');
+    event.stopPropagation();
+    event.preventDefault();
+  });
 });
