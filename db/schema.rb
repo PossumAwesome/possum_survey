@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150211204954) do
+ActiveRecord::Schema.define(version: 20150214024735) do
 
   create_table "authors", force: :cascade do |t|
     t.string   "name"
@@ -34,9 +34,10 @@ ActiveRecord::Schema.define(version: 20150211204954) do
     t.text     "text"
     t.string   "description"
     t.string   "question_type"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.integer  "order_number"
+    t.boolean  "answer_required"
   end
 
   create_table "responses", force: :cascade do |t|
