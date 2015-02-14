@@ -19,7 +19,7 @@
   <p>Question: <%= q.text %></p>
   <p>Description: <%= q.description %></p>
   <!-- the way that this displays depends on q.question_type, which should be hidden-->
-  <p><%= q.question_type %></p>
+  <p>Question type: <%= q.question_type %></p>
   <% q.options.each do |o| %>
     <p><%= o.response %></p>
   <% end %><br>
