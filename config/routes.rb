@@ -12,13 +12,16 @@ Rails.application.routes.draw do
   post 'login/register'
   get 'login/register'
 
-
-  resources :surveys do
-    member do
-      get 'custom_edit'
-      post 'custom_update'
-    end
-  end
+  get 'surveys/custom_edit'
+  post 'surveys/custom_update'
+  #
+  # resources :surveys do
+  #   member do
+  #     get 'custom_edit'
+  #     post 'custom_update'
+  #   end
+  # end
+  resources :surveys
   resources :authors
   resources :takers
 

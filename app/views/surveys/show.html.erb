@@ -20,7 +20,7 @@
   <!-- <strong>Description:</strong> -->
 
 
-<%= form_for @survey, :as => :post, :url => custom_update_survey_path  do |f| %>
+<%= form_tag(:controller => "surveys", :action => "custom_update", :method => "post", :id => @survey.id) do %>
 
 <div class="survey-questions-container">
   <ol>
@@ -29,15 +29,24 @@
     <p class="survey-question-description"><%= q.description %></p>
     <!-- the way that this displays depends on q.question_type, which should be hidden-->
     <p class="survey-question-type"><%= q.question_type %></p>
+    <% if q.question_type == "short answer" %>
+      <%= text_field_tag 'Short answer' %>
+    <% elsif q.question_type == "long answer" %>
+      <%= text_area_tag 'Long answer' %>
+    <% elsif q.question_type == "true/false" %>
+      <%= radio_button_tag 'True', 'True' %>
+      <%= radio_button_tag 'False', 'False' %>
+    <% end %>
     <% q.options.each do |o| %>
       <p><%= o.response %></p>
+      <%= radio_button_tag o.response, o.response %>
     <% end %><br>
   <% end %><br><br>
   </ol>
 </div>
 <!-- Front End, I invoke thee: this submit button is different -- it takes the survey rather than creating it. please update to display accordingly -->
 
-<%= f.submit  %>
+<%= submit_tag  %>
 <% end %>
 
 <div>Share this survey!
