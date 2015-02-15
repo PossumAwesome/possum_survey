@@ -33,3 +33,8 @@
   <% end %><br><br>
   </ol>
 </div>
+
+<div>Share this survey!
+  <!-- Front End, hear my call: please make this display a full link to the current page -->
+  URL: <%= link_to surveys_path+"/#{@survey.id}", surveys_path+"/#{@survey.id}" %>
+</div>
