@@ -27,8 +27,8 @@
   <h1 class="add-questions-title">Add Questions:</h1><br>
   <div class="new-question-container">
 
-    <div class="question">
       <%= f.fields_for :questions do |ff| %>
+    <div class="question">
         <p>Question: <%= ff.text_field :text, class: 'question-field' %></p>
         <p>Description: <%= ff.text_area :description, class: 'description-field' %></p>
         <p>Is this a required question? <%= ff.check_box :answer_required, class: 'required-field' %>Yes.</p>
@@ -40,25 +40,27 @@
         <%= ff.fields_for :options do |ffu| %>
           <p class="multiple-choice-field"> multiple choice option:<%= ffu.text_field :response %></p>
         <% end %>
-      <% end %>
     </div>
+      <% end %>
 
     <div class="hidden-question">
-      <%= f.fields_for :questions do |ff| %>
-        <p>Question: <%= ff.text_field :text, class: 'question-field' %></p>
-        <p>Description: <%= ff.text_area :description, class: 'description-field' %></p>
-        <p>Is this a required question? <%= ff.check_box :answer_required, class: 'required-field' %>Yes.</p>
+        <%= f.fields_for :questions do |ff| %>
+          <div class="hidden-question-div">
+            <p>Question: <%= ff.text_field :text, class: 'question-field' %></p>
+            <p>Description: <%= ff.text_area :description, class: 'description-field' %></p>
+            <p>Is this a required question? <%= ff.check_box :answer_required, class: 'required-field' %>Yes.</p>
 
-        <p>
-          <%= ff.label :question_type %><br>
-          <%= ff.select :question_type, ["true/false", "short answer", "long answer", "multiple choice"], {include_blank: true}, class: 'select-field' %>
-        </p>
-        <%= ff.fields_for :options do |ffu| %>
-          <p class="multiple-choice-field"> multiple choice option:<%= ffu.text_field :response %></p>
+            <p>
+              <%= ff.label :question_type %><br>
+              <%= ff.select :question_type, ["true/false", "short answer", "long answer", "multiple choice"], {include_blank: true}, class: 'select-field' %>
+            </p>
+            <%= ff.fields_for :options do |ffu| %>
+              <p class="multiple-choice-field"> multiple choice option:<%= ffu.text_field :response %></p>
+            <% end %>
+          </div>
         <% end %>
-      <% end %>
     </div>
-
+    <span class="placeholder"></span>
   </div>
   <div class="add-button-container">
     <button class="add-question-button">New Question</button>

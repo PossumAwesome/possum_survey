@@ -3,9 +3,11 @@ $(function () {
     event.preventDefault();
     // alert('i love tom long time');
     var buttonContainer = $('.add-button-container');
-    var clonedItem = $('.hidden-question').clone();
-    clonedItem.removeClass('hidden-question').addClass('question').insertBefore('.actions');
+    // var slice = $('.hidden-question > p').slice(-5);
+    var clonedItem = $('.hidden-question > div').slice(-1).clone();
+    clonedItem.removeClass('hidden-question-div').addClass('question').insertBefore('.placeholder');
     changeIndex();
+    $('.hidden-question').insertBefore('.actions');
     buttonContainer.insertBefore('.actions');
   });
 

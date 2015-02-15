@@ -1,6 +1,7 @@
-<%= link_to "Register a new user", new_author_path %>
+<header class="login-header">
 
-<h1 class="page-title">Awesome Possum</h1>
+  <h1 class="page-title">Awesome Possum</h1>
+</header>
 
 <div class="login-container">
   <h2 id="sign-in-title">Sign In</h2>
@@ -10,5 +11,8 @@
       <%= password_field_tag :password, nil, placeholder: "password" %><br>
       <%= submit_tag "login" %>
     <% end %>
+  </div>
+  <div class="register-link">
+    Not a user? <%= link_to "Register here", new_author_path %>
   </div>
 </div>
