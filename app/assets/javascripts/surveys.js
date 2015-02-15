@@ -33,11 +33,11 @@ $(function () {
   };
 
 
-  var questionType = $('.survey-question-type')
+  // var questionType = $('.survey-question-type')
 
-  $('p.("short answer")').replaceWith('<input type="text">');
-  $('p.survey-question-type:contains("true/false")').replaceWith('<form><input type="radio" name="truefalse" value="true"> <input type="radio" name="truefalse" value="false"></form>');
-  $('p.survey-question-type:contains("long answer")').replaceWith('<br><textarea>');
+  // $('p.survey-question-type:contains("short answer")').append('<input type="text">');
+  // $('p.survey-question-type:contains("true/false")').append('<form><input type="radio" name="truefalse" value="true"> <input type="radio" name="truefalse" value="false"></form>');
+  // $('p.survey-question-type:contains("long answer")').append('<br><textarea>');
 
 
 
