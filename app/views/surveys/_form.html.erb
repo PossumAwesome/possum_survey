@@ -1,71 +1,71 @@
 <%= form_for(@survey) do |f| %>
-  <% if @survey.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@survey.errors.count, "error") %> prohibited this survey from being saved:</h2>
+ <% if @survey.errors.any? %>
+   <div id="error_explanation">
+     <h2><%= pluralize(@survey.errors.count, "error") %> prohibited this survey from being saved:</h2>
 
-      <ul>
-      <% @survey.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+     <ul>
+     <% @survey.errors.full_messages.each do |message| %>
+       <li><%= message %></li>
+     <% end %>
+     </ul>
+   </div>
+ <% end %>
 
-  <div id="author-id" class="field">
-    <%= f.number_field :author_id, :value => session[:author_id] %>
-    <!-- make the above number_field hidden, please -->
-  </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
+ <div id="author-id" class="field">
+   <%= f.number_field :author_id, :value => session[:author_id] %>
+   <!-- make the above number_field hidden, please -->
+ </div>
+ <div class="field">
+   <%= f.label :title %><br>
+   <%= f.text_field :title %>
+ </div>
+ <div class="field">
+   <%= f.label :description %><br>
+   <%= f.text_field :description %>
+ </div>
 
-  <h1 class="add-questions-title">Add Questions:</h1><br>
-  <div class="new-question-container">
+ <h1 class="add-questions-title">Add Questions:</h1><br>
+ <div class="new-question-container">
 
-      <%= f.fields_for :questions do |ff| %>
-    <div class="question">
-        <p>Question: <%= ff.text_field :text, class: 'question-field' %></p>
-        <p>Description: <%= ff.text_area :description, class: 'description-field' %></p>
-        <p>Is this a required question? <%= ff.check_box :answer_required, class: 'required-field' %>Yes.</p>
+     <%= f.fields_for :questions do |ff| %>
+   <div class="question">
+       <p>Question: <%= ff.text_field :text, class: 'question-field' %></p>
+       <p>Description: <%= ff.text_area :description, class: 'description-field' %></p>
+       <p>Is this a required question? <%= ff.check_box :answer_required, class: 'required-field' %>Yes.</p>
 
-        <p>
-          <%= ff.label :question_type %><br>
-          <%= ff.select :question_type, ["true/false", "short answer", "long answer", "multiple choice"], {include_blank: true}, class: 'select-field' %>
-        </p>
-        <%= ff.fields_for :options do |ffu| %>
-          <p class="multiple-choice-field"> multiple choice option:<%= ffu.text_field :response %></p>
-        <% end %>
-    </div>
-      <% end %>
+       <p>
+         <%= ff.label :question_type %><br>
+         <%= ff.select :question_type, ["true/false", "short answer", "long answer", "multiple choice"], {include_blank: true}, class: 'select-field' %>
+       </p>
+       <%= ff.fields_for :options do |ffu| %>
+         <p class="multiple-choice-field"> multiple choice option:<%= ffu.text_field :response %></p>
+       <% end %>
+   </div>
+     <% end %>
 
-    <div class="hidden-question">
-        <%= f.fields_for :questions do |ff| %>
-          <div class="hidden-question-div">
-            <p>Question: <%= ff.text_field :text, class: 'question-field' %></p>
-            <p>Description: <%= ff.text_area :description, class: 'description-field' %></p>
-            <p>Is this a required question? <%= ff.check_box :answer_required, class: 'required-field' %>Yes.</p>
+   <div class="hidden-question">
+       <%= f.fields_for :questions do |ff| %>
+         <div class="hidden-question-div">
+           <p>Question: <%= ff.text_field :text, class: 'question-field' %></p>
+           <p>Description: <%= ff.text_area :description, class: 'description-field' %></p>
+           <p>Is this a required question? <%= ff.check_box :answer_required, class: 'required-field' %>Yes.</p>
 
-            <p>
-              <%= ff.label :question_type %><br>
-              <%= ff.select :question_type, ["true/false", "short answer", "long answer", "multiple choice"], {include_blank: true}, class: 'select-field' %>
-            </p>
-            <%= ff.fields_for :options do |ffu| %>
-              <p class="multiple-choice-field"> multiple choice option:<%= ffu.text_field :response %></p>
-            <% end %>
-          </div>
-        <% end %>
-    </div>
-    <span class="placeholder"></span>
-  </div>
-  <div class="add-button-container">
-    <button class="add-question-button">New Question</button>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+           <p>
+             <%= ff.label :question_type %><br>
+             <%= ff.select :question_type, ["true/false", "short answer", "long answer", "multiple choice"], {include_blank: true}, class: 'select-field' %>
+           </p>
+           <%= ff.fields_for :options do |ffu| %>
+             <p class="multiple-choice-field"> multiple choice option:<%= ffu.text_field :response %></p>
+           <% end %>
+         </div>
+       <% end %>
+   </div>
+   <span class="placeholder"></span>
+ </div>
+ <div class="add-button-container">
+   <button class="add-question-button">New Question</button>
+ </div>
+ <div class="actions">
+   <%= f.submit %>
+ </div>
 <% end %>
