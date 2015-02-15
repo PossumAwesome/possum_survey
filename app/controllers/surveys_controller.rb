@@ -9,21 +9,18 @@ class SurveysController < ApplicationController
   def custom_edit
     # display a survey and its questions
     # have places to fill in responses
-
-
-
   end
 
   # POST
   def custom_update
     taker = Taker.create
-    if @survey.save
-      format.html { redirect_to @survey, notice: 'Survey was successfully created.' }
-      format.json { render :show, status: :created, location: @survey }
-    else
-      format.html { render :new }
-      format.json { render json: @survey.errors, status: :unprocessable_entity }
+
+    params[:number_questions].to_i.times do |i|
+      current_response = params[("response"+(i+1).to_s).to_sym]
+      response = Response.create(response_value: current_response, taker_id: taker.id, question_id: i+1)
     end
+
+    redirect_to @survey, notice: 'Survey was successfully filled.'
   end
 
 
@@ -92,9 +89,6 @@ class SurveysController < ApplicationController
       end
     end
   end
-
-
-
 
   # DELETE /surveys/1
   # DELETE /surveys/1.json
