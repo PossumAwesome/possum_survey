@@ -17,10 +17,12 @@ class SurveysController < ApplicationController
   # POST
   def custom_update
     taker = Taker.create
-    respond_to do |format|
-      #DO STUFF
-      # answer.create(taker_id: taker.id)
-
+    if @survey.save
+      format.html { redirect_to @survey, notice: 'Survey was successfully created.' }
+      format.json { render :show, status: :created, location: @survey }
+    else
+      format.html { render :new }
+      format.json { render json: @survey.errors, status: :unprocessable_entity }
     end
   end
 

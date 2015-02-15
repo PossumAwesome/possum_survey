@@ -24,29 +24,34 @@
 
 <div class="survey-questions-container">
   <ol>
+  <% index = 0 %>
+
   <% @survey.questions.each do |q| %>
+    <% index += 1 %>
+    <% current_response_symbol = ("response" + index.to_s).to_sym %>
     <li><%= q.text %>
     <p class="survey-question-description"><%= q.description %></p>
     <!-- the way that this displays depends on q.question_type, which should be hidden-->
     <p class="survey-question-type"><%= q.question_type %></p>
     <% if q.question_type == "short answer" %>
-      <%= text_field_tag 'Short answer' %>
+      <%= text_field_tag current_response_symbol %>
     <% elsif q.question_type == "long answer" %>
-      <%= text_area_tag 'Long answer' %>
+      <%= text_area_tag current_response_symbol %>
     <% elsif q.question_type == "true/false" %>
-      <%= radio_button_tag 'True', 'True' %>
-      <%= radio_button_tag 'False', 'False' %>
+      <%= radio_button_tag current_response_symbol, 'True' %>
+      <%= radio_button_tag current_response_symbol, 'False' %>
     <% end %>
     <% q.options.each do |o| %>
       <p><%= o.response %></p>
-      <%= radio_button_tag o.response, o.response %>
+      <%= radio_button_tag current_response_symbol, o.response %>
     <% end %><br>
+    <%= hidden_field_tag :number_questions, index %>
+
   <% end %><br><br>
   </ol>
 </div>
 <!-- Front End, I invoke thee: this submit button is different -- it takes the survey rather than creating it. please update to display accordingly -->
-
-<%= submit_tag  %>
+<%= submit_tag %>
 <% end %>
 
 <div>Share this survey!
