@@ -32,4 +32,13 @@ $(function () {
     }
   };
 
+
+  var questionType = $('.survey-question-type')
+
+  $('p.("short answer")').replaceWith('<input type="text">');
+  $('p.survey-question-type:contains("true/false")').replaceWith('<form><input type="radio" name="truefalse" value="true"> <input type="radio" name="truefalse" value="false"></form>');
+  $('p.survey-question-type:contains("long answer")').replaceWith('<br><textarea>');
+
+
+
 });
