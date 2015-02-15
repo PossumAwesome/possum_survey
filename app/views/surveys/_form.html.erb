@@ -43,6 +43,7 @@
       <% end %>
     </div>
 
+    <!-- <div class="question-display"></div> -->
     <div class="hidden-question">
       <%= f.fields_for :questions do |ff| %>
         <p>Question: <%= ff.text_field :text, class: 'question-field' %></p>
