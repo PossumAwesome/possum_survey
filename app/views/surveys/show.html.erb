@@ -20,6 +20,8 @@
   <!-- <strong>Description:</strong> -->
 
 
+<%= form_for(@survey) do |f| %>
+
 <div class="survey-questions-container">
   <ol>
   <% @survey.questions.each do |q| %>
@@ -33,6 +35,10 @@
   <% end %><br><br>
   </ol>
 </div>
+<!-- Front End, I invoke thee: this submit button is different -- it takes the survey rather than creating it. please update to display accordingly -->
+
+<%= f.submit "Submit your response" %>
+<% end %>
 
 <div>Share this survey!
   <!-- Front End, hear my call: please make this display a full link to the current page -->
