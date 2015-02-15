@@ -1,29 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<header>
+  <h1 class="survey-title"><%= @survey.title %></h1>
+  <h3 class="survey-description"><%= @survey.description %></h3>
+  <div class="nav">
+    <%= link_to 'Edit', edit_survey_path(@survey) %> |
+    <%= link_to 'Back', surveys_path %>
+  </div>
+</header>
+
+<p class="author">
   <strong>Author:</strong>
   <%= @survey.author_id %>
 </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @survey.title %>
-</p>
+  <!-- <strong>Title:</strong> -->
 
-<p>
-  <strong>Description:</strong>
-  <%= @survey.description %>
-</p>
 
-<% @survey.questions.each do |q| %>
-  <p>Question: <%= q.text %></p>
-  <p>Description: <%= q.description %></p>
-  <!-- the way that this displays depends on q.question_type, which should be hidden-->
-  <p><%= q.question_type %></p>
-  <% q.options.each do |o| %>
-    <p><%= o.response %></p>
-  <% end %><br>
-<% end %><br><br>
+  <!-- <strong>Description:</strong> -->
 
-<%= link_to 'Edit', edit_survey_path(@survey) %> |
-<%= link_to 'Back', surveys_path %>
+
+<div class="survey-questions-container">
+  <ol>
+  <% @survey.questions.each do |q| %>
+    <li><%= q.text %>
+    <p class="survey-question-description"><%= q.description %></p>
+    <!-- the way that this displays depends on q.question_type, which should be hidden-->
+    <p class="survey-question-type"><%= q.question_type %></p>
+    <% q.options.each do |o| %>
+      <p><%= o.response %></p>
+    <% end %><br>
+  <% end %><br><br>
+  </ol>
+</div>

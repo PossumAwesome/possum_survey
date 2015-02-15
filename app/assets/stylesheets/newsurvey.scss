@@ -1,6 +1,7 @@
 // Place all the styles related to the new controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 // * {
 //   border: 1px dashed black;
 //   padding: 10px;
@@ -35,12 +36,23 @@
   // width: 100%;
 }
 
-.add-question {
-  padding: 1em;
-  background: white;
-  border-radius: .25em;
-  border: 1px solid black;
-  margin-top: .5em;
+.hidden-question {
+  display: none;
+}
+
+.add-button-container {
+  width: 100%;
+
+  .add-question-button {
+    padding: 1em;
+    background: white;
+    border-radius: .25em;
+    border: 1px solid black;
+    width: 15em;
+    margin-top: .5em;
+    margin-left: 27.5em;
+  }
+
 }
 
 .multiple-choice-field {
@@ -78,7 +90,10 @@
 
 
 .new-survey-title {
+  margin-top: 2em;
   margin-left: 10%;
+  margin-bottom: 1.25em;
+  font-size: 3.5em;
 }
 
 .field {
@@ -99,30 +114,24 @@
   margin-left: 5%;
 }
 
-#survey_title {
+#survey_title, #survey_description {
   display: block;
   width: 90%;
   height: 2em;
-  font-size: 2em;
+  font-size: 1.75em;
   margin-left: auto;
   margin-right: auto;
   // margin-bottom: 10px;
 }
 
 #survey_description {
-  display: block;
-  width: 90%;
-  height: 2em;
   font-size: 1.25em;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10px;
 }
 
 .actions input[type=submit]{
   background: #3E83F1;
   border-style: none;
-  font-size: 1em;
+  // font-size: 1em;
   cursor: pointer;
   margin-left: 10%;
   margin-top: 1em;
