@@ -1,5 +1,29 @@
 class SurveysController < ApplicationController
-  before_action :set_survey, only: [:show, :edit, :update, :destroy]
+  before_action :set_survey, only: [:show, :edit, :update, :destroy, :custom_edit, :custom_update]
+
+
+
+
+
+  # GET
+  def custom_edit
+    # display a survey and its questions
+    # have places to fill in responses
+
+
+
+  end
+
+  # POST
+  def custom_update
+    taker = Taker.create
+    respond_to do |format|
+      #DO STUFF
+      # answer.create(taker_id: taker.id)
+
+    end
+  end
+
 
 
   # GET /surveys
@@ -66,6 +90,9 @@ class SurveysController < ApplicationController
       end
     end
   end
+
+
+
 
   # DELETE /surveys/1
   # DELETE /surveys/1.json

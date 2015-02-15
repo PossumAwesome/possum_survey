@@ -20,7 +20,7 @@
   <!-- <strong>Description:</strong> -->
 
 
-<%= form_for(@survey) do |f| %>
+<%= form_for @survey, :as => :post, :url => custom_update_survey_path  do |f| %>
 
 <div class="survey-questions-container">
   <ol>
@@ -37,7 +37,7 @@
 </div>
 <!-- Front End, I invoke thee: this submit button is different -- it takes the survey rather than creating it. please update to display accordingly -->
 
-<%= f.submit "Submit your response" %>
+<%= f.submit  %>
 <% end %>
 
 <div>Share this survey!

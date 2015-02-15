@@ -1,0 +1,10 @@
+<h1>Custom Edit</h1>
+
+<p><%= @survey.title %></p>
+
+<% @survey.questions.each do |q| %>
+  <p><%= q.text %></p>
+  <p><%= q.description %></p>
+  <p><%= q.question_type %></p>
+  <%= text_field_tag 'answer' %>
+<% end %>
