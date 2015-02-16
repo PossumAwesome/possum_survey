@@ -138,3 +138,15 @@
   padding: 1em;
   border-radius: 5px;
 }
+
+.delete-button {
+  border: 1px solid black;
+  background: grey;
+  float: left;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.remove-question {
+  display: none;
+}

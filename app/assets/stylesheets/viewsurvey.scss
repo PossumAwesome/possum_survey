@@ -1,20 +1,19 @@
 // Place all the styles related to the new controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-header {
-  border: 1px solid black;
+
+
+.survey-header {
+  background: #E06A69;
+  padding: 1em;
 }
 
-.survey-title {
-  text-align: center;
+.survey-title, .survey-questions-container {
+  margin-left: 10%;;
 }
 
 .survey-description {
   margin-top: -0.75em;
-  text-align: center;
-}
-
-.survey-questions-container {
   margin-left: 10%;
 }
 
