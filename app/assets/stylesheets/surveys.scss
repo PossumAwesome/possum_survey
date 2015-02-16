@@ -16,7 +16,7 @@
 }
 
 .dashboard-header__container {
-  background-color: $secondary-header;
+  // background-color: $secondary-header;
   margin: 12em auto 0 auto;
   width: 95%;
   padding: .5em;
@@ -24,7 +24,7 @@
 
   .dashboard-header {
     color: $text-color;
-    width: 100%;
+    width: 95%;
     display: inline;
     margin: .5em;
   }
@@ -92,9 +92,6 @@
 
   .survey-list {
     display: table-row-group;
-    &:nth-child(3) {
-      background-color: lightblue;
-    }
 
     .survey-list__item {
       display: table-row;
@@ -118,6 +115,10 @@
       .survey-list__title {
         border-top: 1px solid $border-color;
         border-bottom: 1px solid $border-color;
+        border-left: 1px solid $border-color;
+        padding-left: .5em;
+
+
       }
 
       .survey-list__description {
