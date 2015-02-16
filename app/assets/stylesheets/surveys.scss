@@ -1,45 +1,78 @@
 // Place all the styles related to the Surveys controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.dashboard-header {
-  margin: 2em 0 .5em .2em;
-  font-size: 3.5em;
+body {
+  background-color: $background-color;
 }
 
-.new-survey__link {
-  position: absolute;
-  top: 18.5%;
-  left: 27.5%;
-  font-size: 1.3em;
-}
-
-.icon-plus {
-  position: absolute;
-  top: 18.75%;
-  left: 26%;
-}
-
-.icon-logout {
-  position: absolute;
-  top: 18.75%;
-  right: 7.5%;
-}
-
-.logout-button__link {
+.site-header {
+  width: 100%;
+  background-color: $header;
+  color: $text-color;
   position: fixed;
-  top: 18.5%;
-  right: 2%;
-  font-size: 1.3em;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.dashboard-header__container {
+  background-color: $secondary-header;
+  margin: 4em auto 0 auto;
+  width: 95%;
+  padding: .5em;
+
+
+  .dashboard-header {
+    color: $text-color;
+    width: 100%;
+    display: inline;
+    margin: .5em;
+  }
+
+  .new-survey__link {
+    // position: absolute;
+    top: 18.5%;
+    left: 27.5%;
+    font-size: 1.3em;
+    display: inline;
+
+  }
+
+  .icon-plus {
+    // position: absolute;
+    // top: 18.75%;
+    // left: 26%;
+    color: $text-color;
+    display: inline;
+
+  }
+
+  .logout-button__link {
+    font-size: 1.3em;
+    display: inline;
+  }
+
+  .icon-logout {
+    top: 18.75%;
+    right: 7.5%;
+    color: $text-color;
+    display: inline;
+    margin-left: 1em;
+  }
 }
 
 .dashboard-container {
-  width: 100%;
+  width: 95%;
   padding: 1em;
+  background-color: $background-accent;
+  color: $text-color;
+  margin: auto;
 }
 
 .survey-list-container {
   display: table;
-  width: 100%;
+  width: 95%;
   margin: auto;
 
   .list-head {
@@ -52,6 +85,7 @@
       .list-labels {
         display: table-cell;
         padding-bottom: .5em;
+        padding-right: 1em;
         font-weight: 600;
       }
     }
@@ -72,25 +106,25 @@
       .survey-list__description {
         display: table-cell;
         padding: 1em 0;
-        font-size: 1.5em;
+        font-size: 1.3em;
       }
 
       .survey-list__author {
-        border-top: 1px solid black;
-        border-bottom: 1px solid black;
-        border-left: 1px solid black;
+        border-top: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
+        border-left: 1px solid $border-color;
         padding-left: .5em;
       }
 
       .survey-list__title {
-        border-top: 1px solid black;
-        border-bottom: 1px solid black;
+        border-top: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
       }
 
       .survey-list__description {
-        border-top: 1px solid black;
-        border-bottom: 1px solid black;
-        border-right: 1px solid black;
+        border-top: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
+        border-right: 1px solid $border-color;
       }
 
       .survey-list__link {
@@ -107,9 +141,9 @@
 
 .icons {
   font-family: 'rails-collab';
-  text-decoration: none;
   font-size: 1em;
   margin-right: 1em;
   float: right;
   word-spacing: 8px;
+  color: $text-color;
 }

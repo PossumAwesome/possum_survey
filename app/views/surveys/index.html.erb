@@ -1,7 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="dashboard-header">My Surveys</h1>
-<div class="icon-plus"></div>
+<header class="site-header"><p>Survey Possum</p></header>
+
+<div class="dashboard-header__container">
+  <h1 class="dashboard-header">My Surveys</h1>
+  <div class="icon-plus"></div>
+  <%= link_to 'New Survey', new_survey_path, class: 'new-survey__link' %>
+  <div class="icon-logout"></div>
+  <%= link_to "Log out", login_logout_path, class: 'logout-button__link' %>
+</div>
 
 <div class="dashboard-container">
   <div class="survey-list-container">
@@ -19,9 +26,6 @@
           <li class="survey-list__author"><%= survey.author_id %></li>
           <li class="survey-list__title"><%= survey.title %></li>
           <li class="survey-list__description"><%= survey.description %> <span class="icons"><%= link_to 'm', survey %> <%= link_to 'z', edit_survey_path(survey) %> <%= link_to 't', survey, method: :delete, data: { confirm: 'Are you sure?' } %></span></li>
-          <!-- <li class="survey-list__link icons"><%= link_to 'm', survey %></li>
-          <li class="survey-list__link icons"><%= link_to 'e', edit_survey_path(survey) %></li>
-          <li class="survey-list__link icons"><%= link_to 't', survey, method: :delete, data: { confirm: 'Are you sure?' } %></li> -->
         </ul>
       <% end %>
     </div>
@@ -29,7 +33,3 @@
 </div>
 
 <br>
-
-<%= link_to 'New Survey', new_survey_path, class: 'new-survey__link' %>
-<%= link_to "Log out", login_logout_path, class: 'logout-button__link' %>
-<div class="icon-logout"></div>
