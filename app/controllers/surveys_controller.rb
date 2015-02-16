@@ -1,6 +1,6 @@
 class SurveysController < ApplicationController
   before_action :set_survey, only: [:show, :edit, :update, :destroy, :custom_edit, :custom_update]
-
+  before_action :run_edit, only: [:edit]
 
 
 
@@ -110,6 +110,15 @@ class SurveysController < ApplicationController
     def survey_params
       params.require(:survey).permit(:author_id, :title, :description,
         questions_attributes: [:id, :text, :description, :question_type, options_attributes: [:id, :response]])
+    end
+
+    def run_edit
+      @survey.questions.each do |q|
+        if q.responses.any?
+          redirect_to surveys_path
+          return
+        end
+      end
     end
 
 end
