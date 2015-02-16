@@ -6,24 +6,32 @@
 .survey-header {
   background: #E06A69;
   padding: 1em;
+  // position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
 }
 
 .survey-title, .survey-questions-container {
-  margin-left: 10%;;
+  margin-left: 10%;
+  font-size: 1.3em;
+  padding: .3em;
 }
 
 .survey-description {
-  margin-top: -0.75em;
+  margin-top: 1em;
   margin-left: 10%;
 }
 
 .survey-question-description {
-  margin-top: -0.5em;
+  margin-top: .1em;
   font-size: 0.75em;
 }
 
 .survey-question-type {
   margin-top: -0.5em;
+  display: none;
 }
 
 .author {
@@ -38,4 +46,11 @@
 
 .nav {
   float: right;
+}
+
+button {
+  padding: 1em;
+  font-size: 1em;
+  width: 10em;
+  background: white;
 }
