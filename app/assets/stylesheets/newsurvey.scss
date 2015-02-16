@@ -18,10 +18,11 @@
 }
 
 .new-question-container {
-  border: 1px solid black;
+  // border: 1px solid black;
   width: 50%;
   padding: 1em;
-  margin: auto;
+  // margin: auto;
+  margin-left: 11%;
 }
 
 .new-question-select {
@@ -34,6 +35,7 @@
   border: 1px solid black;
   padding: 1em;
   // width: 100%;
+  background: #4E4D5C;
 }
 
 .hidden-question {
@@ -50,7 +52,7 @@
     border: 1px solid black;
     width: 15em;
     margin-top: .5em;
-    margin-left: 27.5em;
+    margin-left: 12%;
   }
 
 }
@@ -122,23 +124,23 @@
 }
 
 .actions input[type=submit]{
-  background: #3E83F1;
+  background: #E06A69;
   border-style: none;
   // font-size: 1em;
   cursor: pointer;
-  margin-left: auto;
+  margin-left: 12%;
   margin-right: auto;
   margin-top: 1em;
   padding: 1em;
   border-radius: 5px;
+  color: white;
 }
 
 .delete-button {
-  border: 1px solid black;
-  background: grey;
-  float: left;
+  float: right;
   padding: 5px;
   cursor: pointer;
+  margin-top: -0.75em;
 }
 
 .remove-question {
