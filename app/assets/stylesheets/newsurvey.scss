@@ -89,24 +89,17 @@
   }
 
 
-.new-survey-title {
-  margin-top: 2em;
-  margin-left: 10%;
-  margin-bottom: 1.25em;
-  font-size: 3.5em;
+.new-survey-page-container {
+  margin-top: 12em;
 }
 
 .field {
   // border: 1px solid #F5F5F5;
-  width: 90%;
+  width: 85%;
   margin-left: auto;
   margin-right: auto;
   padding: 1em;
   resize: none;
-}
-
-.field:hover {
-  background: #F5F5F5;
 }
 
 .field label {
@@ -133,7 +126,8 @@
   border-style: none;
   // font-size: 1em;
   cursor: pointer;
-  margin-left: 10%;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 1em;
   padding: 1em;
   border-radius: 5px;
@@ -149,4 +143,14 @@
 
 .remove-question {
   display: none;
+}
+
+.links {
+  display: inline;
+  // font-size: 0.5em;
+  // float: right;
+}
+
+.add-questions-title {
+  margin-left: 13%;
 }

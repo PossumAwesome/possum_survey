@@ -1,16 +1,17 @@
 // Place all the styles related to the login controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-// body {
-//   background: #403F4C;
-//   color: white;
-// }
-
-.login-header {
-  background: #E06A69;
-  color: white;
-  padding: 1em;
+body {
+  background: #403F4C;
+  color: $text-color;
 }
+
+// .login-header {
+//   background: #E06A69;
+//   color: white;
+//   padding: 1em;
+//   width: 100
+// }
 
 #sign-in-title {
   padding-top: 1em;
@@ -18,18 +19,17 @@
   font-size: 2em;
 }
 
-.page-title {
-  margin-left: 5%;
-  // margin-top: 2em;
-  font-size: 2.5em;
-}
+// .page-title {
+//   // margin-top: 2em;
+//   // font-size: 2.5em;
+// }
 
 .login-container {
   padding: 0 1em 2em 1em;
   width: 400px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 8em;
+  margin-top: 12em;
   background: #4E4D5C;
   border-radius: 5px;
 }
@@ -51,7 +51,7 @@
   font-size: 1em;
   cursor: pointer;
   border-style: none;
-  background: #403F4C;
+  background: $background-accent;
   color: white;
 }
 
@@ -61,6 +61,10 @@
 
   a {
     color: white;
+  }
+
+  a:hover {
+    background: #403F4C;
   }
 
 }

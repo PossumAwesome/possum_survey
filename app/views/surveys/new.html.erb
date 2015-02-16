@@ -1,8 +1,15 @@
-<h1 class="new-survey-title">New Survey</h1>
+<header class="site-header">
+  <p class="new-survey-title">New Survey</p>
+</header>
 
-<%= render 'form' %>
+<div class="new-survey-page-container">
 
-<%= link_to 'Back', surveys_path %>
+  <div class="links">
+    <%= link_to 'Back', surveys_path, class: 'back-button' %>
+    <div class="icon-logout"></div>
+    <%= link_to "Log out", login_logout_path, class: 'logout-button__link' %>
+  </div>
 
-<%= link_to "Log out", login_logout_path, class: 'logout-button__link' %>
-<div class="icon-logout"></div>
+  <%= render 'form' %>
+
+</div>
