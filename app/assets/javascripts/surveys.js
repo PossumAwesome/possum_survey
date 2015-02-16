@@ -4,12 +4,12 @@ $(function () {
     // alert('i love tom long time');
     var buttonContainer = $('.add-button-container');
     // var slice = $('.hidden-question > p').slice(-5);
-    var clonedItem = $('.hidden-question > div').slice(-1).clone();
+    var clonedItem = $('.hidden-question > div').slice(-5).clone(true);
     clonedItem.removeClass('hidden-question-div').addClass('question').insertBefore('.placeholder');
     changeIndex();
-    $('.hidden-question').insertBefore('.actions');
     buttonContainer.insertBefore('.actions');
   });
+
 
   function changeIndex () {
 
@@ -33,6 +33,14 @@ $(function () {
     targetNode.attr(attribute, currentAttr.replace( /\d+/g, index)); // changes it using super sweet regex
     }
   };
+
+  $('.delete-button').on('click', function () {
+    var thisButton = $(this);
+    var question = thisButton.parent();
+    alert('fire');
+
+    $(question).addClass('remove-question');
+  });
 
 
   // var questionType = $('.survey-question-type')

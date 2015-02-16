@@ -27,25 +27,29 @@
   <h1 class="add-questions-title">Add Questions:</h1><br>
   <div class="new-question-container">
 
+    <div class="question-field-container">
       <%= f.fields_for :questions do |ff| %>
-    <div class="question">
-        <p>Question: <%= ff.text_field :text, class: 'question-field' %></p>
-        <p>Description: <%= ff.text_area :description, class: 'description-field' %></p>
-        <p>Is this a required question? <%= ff.check_box :answer_required, class: 'required-field' %>Yes.</p>
+        <div class="question">
+          <div class="delete-button">x</div><br>
+          <p>Question: <%= ff.text_field :text, class: 'question-field' %></p>
+          <p>Description: <%= ff.text_area :description, class: 'description-field' %></p>
+          <p>Is this a required question? <%= ff.check_box :answer_required, class: 'required-field' %>Yes.</p>
 
-        <p>
-          <%= ff.label :question_type %><br>
-          <%= ff.select :question_type, ["true/false", "short answer", "long answer", "multiple choice"], {include_blank: true}, class: 'select-field' %>
-        </p>
-        <%= ff.fields_for :options do |ffu| %>
-          <p class="multiple-choice-field"> multiple choice option:<%= ffu.text_field :response %></p>
-        <% end %>
-    </div>
+          <p>
+            <%= ff.label :question_type %><br>
+            <%= ff.select :question_type, ["true/false", "short answer", "long answer", "multiple choice"], {include_blank: true}, class: 'select-field' %>
+          </p>
+          <%= ff.fields_for :options do |ffu| %>
+            <p class="multiple-choice-field"> multiple choice option:<%= ffu.text_field :response %></p>
+          <% end %>
+        </div>
       <% end %>
+    </div>
 
     <div class="hidden-question">
         <%= f.fields_for :questions do |ff| %>
           <div class="hidden-question-div">
+            <div class="delete-button">x</div><br>
             <p>Question: <%= ff.text_field :text, class: 'question-field' %></p>
             <p>Description: <%= ff.text_area :description, class: 'description-field' %></p>
             <p>Is this a required question? <%= ff.check_box :answer_required, class: 'required-field' %>Yes.</p>
