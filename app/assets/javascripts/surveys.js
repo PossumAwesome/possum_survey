@@ -10,6 +10,10 @@ $(function () {
     buttonContainer.insertBefore('.actions');
   });
 
+  $('.new-question-container').sortable({
+    axis: 'y'
+  });
+
 
   function changeIndex () {
 
