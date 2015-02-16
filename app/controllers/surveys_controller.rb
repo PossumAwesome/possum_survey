@@ -14,7 +14,6 @@ class SurveysController < ApplicationController
   # POST
   def custom_update
     taker = Taker.create
-
     params[:number_questions].to_i.times do |i|
       current_response = params[("response"+(i+1).to_s).to_sym]
       response = Response.create(response_value: current_response, taker_id: taker.id, question_id: i+1)

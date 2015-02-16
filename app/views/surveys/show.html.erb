@@ -28,7 +28,7 @@
 
   <% @survey.questions.each do |q| %>
     <% index += 1 %>
-    <% current_response_symbol = ("response" + index.to_s).to_sym %>
+    <% current_response_symbol = ("response[#{index}]") %>
     <li><%= q.text %>
     <p class="survey-question-description"><%= q.description %></p>
     <!-- the way that this displays depends on q.question_type, which should be hidden-->
