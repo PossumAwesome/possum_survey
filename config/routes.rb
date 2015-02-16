@@ -13,7 +13,11 @@ Rails.application.routes.draw do
   get 'login/register'
 
   get 'surveys/custom_edit'
+  post 'surveys/custom_edit'
+
   post 'surveys/custom_update'
+
+  post 'surveys/view_results'
   #
   # resources :surveys do
   #   member do

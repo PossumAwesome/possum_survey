@@ -1,5 +1,5 @@
 class SurveysController < ApplicationController
-  before_action :set_survey, only: [:show, :edit, :update, :destroy, :custom_edit, :custom_update]
+  before_action :set_survey, only: [:show, :edit, :update, :destroy, :custom_edit, :custom_update, :view_results]
   before_action :run_edit, only: [:edit]
 
 
@@ -22,6 +22,10 @@ class SurveysController < ApplicationController
     redirect_to @survey, notice: 'Survey was successfully filled.'
   end
 
+
+  def view_results
+
+  end
 
 
   # GET /surveys

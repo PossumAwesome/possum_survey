@@ -18,7 +18,7 @@
         <ul class="survey-list__item">
           <li class="survey-list__author"><%= survey.author_id %></li>
           <li class="survey-list__title"><%= survey.title %></li>
-          <li class="survey-list__description"><%= survey.description %> <span class="icons"><%= link_to 'm', survey %> <%= link_to 'z', edit_survey_path(survey) %> <%= link_to 't', survey, method: :delete, data: { confirm: 'Are you sure?' } %></span></li>
+          <li class="survey-list__description"><%= survey.description %> <span class="icons"><%= link_to 'm', survey %> <%= link_to 'z', edit_survey_path(survey) %> <%= link_to 't', survey, method: :delete, data: { confirm: 'Are you sure?' } %><%= link_to 'r', surveys_view_results_path %></span></li>
           <!-- <li class="survey-list__link icons"><%= link_to 'm', survey %></li>
           <li class="survey-list__link icons"><%= link_to 'e', edit_survey_path(survey) %></li>
           <li class="survey-list__link icons"><%= link_to 't', survey, method: :delete, data: { confirm: 'Are you sure?' } %></li> -->
