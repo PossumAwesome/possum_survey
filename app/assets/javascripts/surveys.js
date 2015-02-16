@@ -4,7 +4,7 @@ $(function () {
     // alert('i love tom long time');
     var buttonContainer = $('.add-button-container');
     // var slice = $('.hidden-question > p').slice(-5);
-    var clonedItem = $('.hidden-question > div').slice(-5).clone(true);
+    var clonedItem = $('.hidden-question > div').slice(-1).clone(true);
     clonedItem.removeClass('hidden-question-div').addClass('question').insertBefore('.placeholder');
     changeIndex();
     buttonContainer.insertBefore('.actions');
